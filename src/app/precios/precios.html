@@ -1,0 +1,54 @@
+<section class="precios">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="etiqueta">
+        <i class="bi bi-cash-coin me-1"></i> Precios transparentes
+      </span>
+      <h1 class="titulo mt-3">Sin sorpresas al momento de pagar</h1>
+      <p class="descripcion mx-auto">
+        Estos son los precios vigentes de nuestros tratamientos. Si tu caso necesita más sesiones,
+        te lo decimos en la primera consulta.
+      </p>
+    </div>
+
+    <div class="table-responsive tabla-contenedor">
+      <table class="table align-middle mb-0">
+        <thead>
+          <tr>
+            <th>Tratamiento</th>
+            <th>Duración</th>
+            <th class="text-end">Precio regular</th>
+            <th class="text-end">Precio hoy</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (tratamiento of tratamientos; track tratamiento.nombre) {
+            <tr [class.fila-promo]="tratamiento.promo > 0">
+              <td class="fw-semibold">
+                {{ tratamiento.nombre }}
+                @if (tratamiento.promo > 0) {
+                  <span class="badge-promo ms-2">
+                    <i class="bi bi-tag-fill me-1"></i> Promo -{{ tratamiento.promo }}%
+                  </span>
+                }
+              </td>
+              <td>{{ tratamiento.duracion }}</td>
+              <td class="text-end text-muted">
+                @if (tratamiento.precioRegular > 0) {
+                  <del>S/ {{ tratamiento.precioRegular }}</del>
+                } @else {
+                  —
+                }
+              </td>
+              <td class="text-end fw-bold">S/ {{ tratamiento.precioHoy }}</td>
+              <td class="text-end">
+                <a class="btn btn-agendar rounded-pill" routerLink="/agendar">Agendar</a>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
