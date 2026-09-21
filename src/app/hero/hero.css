@@ -1,0 +1,57 @@
+.hero {
+  background: linear-gradient(135deg, #e9f6f8, #ffffff);
+  padding: 80px 0;
+}
+
+.titulo {
+  color: #0f3440;
+  font-size: 3.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.resaltado {
+  color: #1a9aa0;
+}
+
+.descripcion {
+  color: #4a5a61;
+  font-size: 1.15rem;
+}
+
+.btn-agendar {
+  background-color: #1a9aa0;
+  color: white;
+  font-weight: 600;
+  padding: 12px 32px;
+}
+
+.btn-agendar:hover {
+  background-color: #147e83;
+  color: white;
+}
+
+.btn-precios {
+  border: 1px solid #1a9aa0;
+  color: #147e83;
+  font-weight: 600;
+  padding: 12px 32px;
+}
+
+.btn-precios:hover {
+  background-color: #1a9aa0;
+  color: white;
+}
+
+.marco-imagen {
+  background-color: white;
+  padding: 16px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 2.4rem;
+  }
+}
