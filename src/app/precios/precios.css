@@ -14,12 +14,22 @@
 
 .titulo {
   color: #0f3440;
-  font-weight: 600;
+  font-size: 2.25rem;
+  font-weight: 700;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .descripcion {
   color: #4a5a61;
-  max-width: 720px;
+  max-width: 660px;
+}
+
+.actualizado {
+  color: #147e83;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .tabla-contenedor {
@@ -71,4 +81,10 @@
 .btn-agendar:hover {
   background-color: #1a9aa0;
   color: white;
+}
+
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 1.75rem;
+  }
 }

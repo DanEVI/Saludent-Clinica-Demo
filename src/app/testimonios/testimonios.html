@@ -1,0 +1,38 @@
+<section class="testimonios" id="testimonios">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="etiqueta">
+        <i class="bi bi-chat-heart me-1"></i> Testimonios
+      </span>
+      <h2 class="titulo mt-3">Lo que dicen nuestros pacientes</h2>
+      <p class="descripcion mx-auto">
+        Opiniones de personas que confiaron su sonrisa a nuestro equipo.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      @for (testimonio of testimonios; track testimonio.nombre) {
+        <div class="col-12 col-md-4">
+          <div class="tarjeta">
+            <div class="d-flex align-items-center mb-3">
+              <img class="avatar me-3" [src]="testimonio.foto" [alt]="testimonio.nombre" />
+              <div>
+                <p class="nombre mb-0">{{ testimonio.nombre }}</p>
+                <div class="estrellas">
+                  @for (estrella of estrellas; track estrella) {
+                    @if (estrella <= testimonio.puntaje) {
+                      <i class="bi bi-star-fill"></i>
+                    } @else {
+                      <i class="bi bi-star"></i>
+                    }
+                  }
+                </div>
+              </div>
+            </div>
+            <p class="comentario mb-0">"{{ testimonio.comentario }}"</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,6 +1,6 @@
-.equipo {
+.casos {
   background-color: #ffffff;
-  padding: 60px 0 80px;
+  padding: 80px 0;
 }
 
 .etiqueta {
@@ -26,25 +26,23 @@
   max-width: 660px;
 }
 
+.carousel {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .tarjeta {
   background-color: #ffffff;
   border: 1px solid #e4eef0;
   border-radius: 16px;
   overflow: hidden;
-  height: 100%;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.tarjeta:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 30px rgba(26, 154, 160, 0.18);
 }
 
 .foto {
   position: relative;
   background: linear-gradient(135deg, #7fd3d8, #147e83);
-  height: 230px;
+  height: 360px;
   overflow: hidden;
 }
 
@@ -55,29 +53,28 @@
   transition: transform 0.4s ease;
 }
 
-.tarjeta:hover .foto img {
+.foto:hover img {
   transform: scale(1.08);
 }
 
-.badge-anios {
+.badge-foto {
   position: absolute;
   left: 12px;
-  bottom: 12px;
-  background-color: #ffffff;
-  color: #0f3440;
+  top: 12px;
+  background-color: #0f3440;
+  color: white;
   font-size: 0.8rem;
   font-weight: 600;
   padding: 5px 12px;
   border-radius: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
-.badge-anios i {
-  color: #1a9aa0;
+.badge-despues {
+  background-color: #1a9aa0;
 }
 
 .datos {
-  padding: 18px;
+  padding: 18px 24px;
 }
 
 .nombre {
@@ -87,21 +84,60 @@
   margin-bottom: 4px;
 }
 
-.especialidad {
-  color: #147e83;
-  font-weight: 600;
+.texto {
+  color: #6b7a80;
   font-size: 0.95rem;
-  margin-bottom: 12px;
+  margin-bottom: 0;
 }
 
-.registro {
-  color: #6b7a80;
+.duracion {
+  background-color: #dff1f3;
+  color: #147e83;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 60px;
+  opacity: 1;
+}
+
+.flecha {
+  background-color: white;
+  color: #147e83;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-caso {
+  border: 1px solid #1a9aa0;
+  color: #147e83;
   font-size: 0.9rem;
-  margin-bottom: 0;
+  font-weight: 600;
+  padding: 6px 18px;
+}
+
+.btn-caso:hover,
+.btn-caso.active {
+  background-color: #1a9aa0;
+  color: white;
 }
 
 @media (max-width: 768px) {
   .titulo {
     font-size: 1.75rem;
+  }
+
+  .foto {
+    height: 200px;
   }
 }

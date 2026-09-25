@@ -1,0 +1,93 @@
+.servicios {
+  background: linear-gradient(180deg, #e9f6f8, #ffffff);
+  padding: 40px 0 80px;
+}
+
+.etiqueta {
+  background-color: #dff1f3;
+  color: #147e83;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.titulo {
+  color: #0f3440;
+  font-size: 2.25rem;
+  font-weight: 700;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.descripcion {
+  color: #4a5a61;
+  max-width: 660px;
+}
+
+.tarjeta {
+  background-color: #ffffff;
+  border: 1px solid #e4eef0;
+  border-radius: 16px;
+  padding: 24px;
+  height: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta:hover {
+  border-color: #1a9aa0;
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(26, 154, 160, 0.18);
+}
+
+.tarjeta:hover .icono {
+  background-color: #1a9aa0;
+  color: white;
+  transform: rotate(-8deg) scale(1.1);
+}
+
+.icono {
+  background-color: #dff1f3;
+  color: #1a9aa0;
+  font-size: 1.4rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.nombre {
+  color: #0f3440;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.texto {
+  color: #6b7a80;
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.btn-precios {
+  border: 1px solid #1a9aa0;
+  color: #147e83;
+  font-weight: 600;
+  padding: 12px 32px;
+}
+
+.btn-precios:hover {
+  background-color: #1a9aa0;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 1.75rem;
+  }
+}

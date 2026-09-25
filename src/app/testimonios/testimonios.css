@@ -1,0 +1,63 @@
+.testimonios {
+  background: linear-gradient(180deg, #e9f6f8, #ffffff);
+  padding: 80px 0;
+}
+
+.etiqueta {
+  background-color: #dff1f3;
+  color: #147e83;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.titulo {
+  color: #0f3440;
+  font-size: 2.25rem;
+  font-weight: 700;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.descripcion {
+  color: #4a5a61;
+  max-width: 660px;
+}
+
+.tarjeta {
+  background-color: #ffffff;
+  border: 1px solid #e4eef0;
+  border-radius: 16px;
+  padding: 24px;
+  height: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+.estrellas {
+  color: #f5b400;
+  font-size: 0.85rem;
+}
+
+.comentario {
+  color: #4a5a61;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nombre {
+  color: #0f3440;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 1.75rem;
+  }
+}

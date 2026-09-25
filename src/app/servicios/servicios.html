@@ -1,0 +1,34 @@
+<section class="servicios">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="etiqueta">
+        <i class="bi bi-clipboard2-pulse me-1"></i> Servicios dentales
+      </span>
+      <h1 class="titulo mt-3">Todo lo que tu sonrisa necesita en un solo lugar</h1>
+      <p class="descripcion mx-auto">
+        Desde una limpieza hasta un implante, nuestros especialistas te acompañan en cada paso del
+        tratamiento.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      @for (servicio of servicios; track servicio.nombre) {
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="tarjeta">
+            <span class="icono mb-3">
+              <i class="bi {{ servicio.icono }}"></i>
+            </span>
+            <h2 class="nombre">{{ servicio.nombre }}</h2>
+            <p class="texto">{{ servicio.descripcion }}</p>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="text-center mt-5">
+      <a class="btn btn-precios rounded-pill" routerLink="/precios">
+        <i class="bi bi-cash-coin me-2"></i> Ver precios de tratamientos
+      </a>
+    </div>
+  </div>
+</section>
