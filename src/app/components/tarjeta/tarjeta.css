@@ -1,0 +1,26 @@
+:host {
+  display: block;
+  height: 100%;
+  background-color: #ffffff;
+  border: 1px solid var(--color-borde);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+:host(.con-relleno) {
+  padding: 24px;
+}
+
+:host(.elevable) {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+:host(.elevable:hover) {
+  border-color: var(--color-primario);
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(26, 154, 160, 0.18);
+}

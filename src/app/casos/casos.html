@@ -1,20 +1,17 @@
 <section class="casos" id="casos">
   <div class="container">
-    <div class="text-center mb-5">
-      <span class="etiqueta">
-        <i class="bi bi-images me-1"></i> Galería de casos
-      </span>
-      <h2 class="titulo mt-3">Resultados reales de nuestros pacientes</h2>
-      <p class="descripcion mx-auto">
-        Compara el antes y el después de algunos tratamientos realizados en Saludent.
-      </p>
-    </div>
+    <app-encabezado-seccion
+      icono="bi-images"
+      etiqueta="Galería de casos"
+      titulo="Resultados reales de nuestros pacientes"
+      descripcion="Compara el antes y el después de algunos tratamientos realizados en Saludent."
+    />
 
     <div id="carruselCasos" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         @for (caso of casos; track caso.tratamiento) {
           <div class="carousel-item" [class.active]="$first">
-            <div class="tarjeta">
+            <app-tarjeta [relleno]="false">
               <div class="row g-0">
                 <div class="col-6">
                   <div class="foto">
@@ -29,7 +26,9 @@
                   </div>
                 </div>
               </div>
-              <div class="datos d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+              <div
+                class="datos d-flex flex-column flex-md-row justify-content-between align-items-md-center"
+              >
                 <div>
                   <h3 class="nombre">{{ caso.tratamiento }}</h3>
                   <p class="texto">{{ caso.descripcion }}</p>
@@ -38,16 +37,26 @@
                   <i class="bi bi-clock me-1"></i> {{ caso.duracion }}
                 </span>
               </div>
-            </div>
+            </app-tarjeta>
           </div>
         }
       </div>
 
-      <button class="carousel-control-prev" type="button" data-bs-target="#carruselCasos" data-bs-slide="prev">
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carruselCasos"
+        data-bs-slide="prev"
+      >
         <span class="flecha"><i class="bi bi-chevron-left"></i></span>
         <span class="visually-hidden">Anterior</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carruselCasos" data-bs-slide="next">
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carruselCasos"
+        data-bs-slide="next"
+      >
         <span class="flecha"><i class="bi bi-chevron-right"></i></span>
         <span class="visually-hidden">Siguiente</span>
       </button>
@@ -57,7 +66,7 @@
       @for (caso of casos; track caso.tratamiento; let i = $index) {
         <button
           type="button"
-          class="btn btn-caso rounded-pill"
+          class="btn btn-contorno btn-caso rounded-pill"
           data-bs-target="#carruselCasos"
           [attr.data-bs-slide-to]="i"
         >

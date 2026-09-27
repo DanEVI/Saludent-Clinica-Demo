@@ -1,25 +1,28 @@
 import { Component } from '@angular/core';
+import { EncabezadoSeccion } from '../components/encabezado-seccion/encabezado-seccion';
+import { Tarjeta } from '../components/tarjeta/tarjeta';
+import { Calificacion } from '../components/calificacion/calificacion';
 
 @Component({
   selector: 'app-testimonios',
-  imports: [],
+  imports: [EncabezadoSeccion, Tarjeta, Calificacion],
   templateUrl: './testimonios.html',
   styleUrl: './testimonios.css',
 })
 export class Testimonios {
-  estrellas = [1, 2, 3, 4, 5];
-
   testimonios = [
     {
       nombre: 'María Fernández',
       foto: 'https://randomuser.me/api/portraits/women/44.jpg',
-      comentario: 'Me explicaron todo el tratamiento y el precio desde la primera cita. Mi sonrisa cambió por completo.',
+      comentario:
+        'Me explicaron todo el tratamiento y el precio desde la primera cita. Mi sonrisa cambió por completo.',
       puntaje: 5,
     },
     {
       nombre: 'Jorge Castillo',
       foto: 'https://randomuser.me/api/portraits/men/32.jpg',
-      comentario: 'Tenía miedo a la cirugía, pero el doctor me dio mucha confianza. El resultado es muy natural.',
+      comentario:
+        'Tenía miedo a la cirugía, pero el doctor me dio mucha confianza. El resultado es muy natural.',
       puntaje: 5,
     },
     {

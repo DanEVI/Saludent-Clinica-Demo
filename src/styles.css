@@ -1,1 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --color-primario: #1a9aa0;
+  --color-primario-oscuro: #147e83;
+  --color-titulo: #0f3440;
+  --color-texto: #4a5a61;
+  --color-texto-suave: #6b7a80;
+  --color-suave: #dff1f3;
+  --color-borde: #e4eef0;
+  --fondo-degradado: linear-gradient(180deg, #e9f6f8, #ffffff);
+}
+
+.btn-primario {
+  background-color: var(--color-primario);
+  color: white;
+  font-weight: 600;
+  padding: 8px 24px;
+}
+
+.btn-primario:hover {
+  background-color: var(--color-primario-oscuro);
+  color: white;
+}
+
+.btn-contorno {
+  border: 1px solid var(--color-primario);
+  color: var(--color-primario-oscuro);
+  font-weight: 600;
+  padding: 8px 24px;
+}
+
+.btn-contorno:hover,
+.btn-contorno.active {
+  background-color: var(--color-primario);
+  color: white;
+}
+
+.btn-enlace {
+  color: var(--color-primario-oscuro);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  padding: 0;
+}
+
+.btn-enlace:hover {
+  color: var(--color-titulo);
+}
+
+.btn-grande {
+  padding: 12px 32px;
+}

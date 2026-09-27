@@ -3,45 +3,14 @@
   padding: 80px 0;
 }
 
-.etiqueta {
-  background-color: #dff1f3;
-  color: #147e83;
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 6px 14px;
-  border-radius: 20px;
-}
-
-.titulo {
-  color: #0f3440;
-  font-size: 2.25rem;
-  font-weight: 700;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.descripcion {
-  color: #4a5a61;
-  max-width: 660px;
-}
-
 .carousel {
   max-width: 900px;
   margin: 0 auto;
 }
 
-.tarjeta {
-  background-color: #ffffff;
-  border: 1px solid #e4eef0;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-}
-
 .foto {
   position: relative;
-  background: linear-gradient(135deg, #7fd3d8, #147e83);
+  background: linear-gradient(135deg, #7fd3d8, var(--color-primario-oscuro));
   height: 360px;
   overflow: hidden;
 }
@@ -61,7 +30,7 @@
   position: absolute;
   left: 12px;
   top: 12px;
-  background-color: #0f3440;
+  background-color: var(--color-titulo);
   color: white;
   font-size: 0.8rem;
   font-weight: 600;
@@ -70,7 +39,7 @@
 }
 
 .badge-despues {
-  background-color: #1a9aa0;
+  background-color: var(--color-primario);
 }
 
 .datos {
@@ -78,21 +47,21 @@
 }
 
 .nombre {
-  color: #0f3440;
+  color: var(--color-titulo);
   font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 4px;
 }
 
 .texto {
-  color: #6b7a80;
+  color: var(--color-texto-suave);
   font-size: 0.95rem;
   margin-bottom: 0;
 }
 
 .duracion {
-  background-color: #dff1f3;
-  color: #147e83;
+  background-color: var(--color-suave);
+  color: var(--color-primario-oscuro);
   font-size: 0.85rem;
   font-weight: 600;
   padding: 5px 12px;
@@ -108,7 +77,7 @@
 
 .flecha {
   background-color: white;
-  color: #147e83;
+  color: var(--color-primario-oscuro);
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -119,24 +88,11 @@
 }
 
 .btn-caso {
-  border: 1px solid #1a9aa0;
-  color: #147e83;
   font-size: 0.9rem;
-  font-weight: 600;
   padding: 6px 18px;
 }
 
-.btn-caso:hover,
-.btn-caso.active {
-  background-color: #1a9aa0;
-  color: white;
-}
-
 @media (max-width: 768px) {
-  .titulo {
-    font-size: 1.75rem;
-  }
-
   .foto {
     height: 200px;
   }

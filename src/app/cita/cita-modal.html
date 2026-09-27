@@ -1,0 +1,84 @@
+<app-modal titulo="Agenda tu cita" [abierto]="cita.abierto()" (cerrar)="cita.cerrar()">
+  @if (!confirmada()) {
+    <h2 class="titulo">Agenda tu cita</h2>
+
+    <form [formGroup]="form" (ngSubmit)="confirmar()" novalidate>
+      <div class="mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nombre completo"
+          formControlName="nombre"
+          autocomplete="name"
+          [class.is-invalid]="invalido('nombre')"
+        />
+        <app-mensaje-error [errores]="errores('nombre')" [mensajes]="mensajes.nombre" />
+      </div>
+
+      <div class="mb-3">
+        <input
+          type="email"
+          class="form-control"
+          placeholder="Email"
+          formControlName="email"
+          autocomplete="email"
+          [class.is-invalid]="invalido('email')"
+        />
+        <app-mensaje-error [errores]="errores('email')" [mensajes]="mensajes.email" />
+      </div>
+
+      <div class="mb-3">
+        <select
+          class="form-select"
+          formControlName="servicio"
+          [class.is-invalid]="invalido('servicio')"
+        >
+          <option value="" disabled>Servicio</option>
+          @for (servicio of servicios; track servicio) {
+            <option [value]="servicio">{{ servicio }}</option>
+          }
+        </select>
+        <app-mensaje-error [errores]="errores('servicio')" [mensajes]="mensajes.servicio" />
+      </div>
+
+      <div class="row g-3 mb-3">
+        <div class="col-6">
+          <input
+            type="date"
+            class="form-control"
+            formControlName="fecha"
+            aria-label="Fecha"
+            [min]="hoy"
+            [class.is-invalid]="invalido('fecha')"
+          />
+          <app-mensaje-error [errores]="errores('fecha')" [mensajes]="mensajes.fecha" />
+        </div>
+        <div class="col-6">
+          <input
+            type="time"
+            class="form-control"
+            formControlName="hora"
+            aria-label="Hora"
+            [min]="horaApertura"
+            [max]="horaCierre"
+            [class.is-invalid]="invalido('hora')"
+          />
+          <app-mensaje-error [errores]="errores('hora')" [mensajes]="mensajes.hora" />
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-confirmar w-100">Confirmar cita</button>
+    </form>
+  } @else {
+    <div class="text-center py-2">
+      <span class="icono-ok mb-3"><i class="bi bi-check-lg"></i></span>
+      <h2 class="titulo">¡Cita confirmada!</h2>
+      <p class="resumen">
+        {{ form.value.nombre }}, te esperamos para <strong>{{ form.value.servicio }}</strong> el
+        <strong>{{ form.value.fecha }}</strong> a las <strong>{{ form.value.hora }}</strong
+        >. Enviamos la confirmación a {{ form.value.email }}.
+      </p>
+      <button type="button" class="btn btn-confirmar w-100" (click)="cita.cerrar()">Listo</button>
+    </div>
+  }
+</app-modal>

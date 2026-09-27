@@ -1,0 +1,9 @@
+<span class="estrellas" role="img" [attr.aria-label]="puntaje() + ' de ' + maximo() + ' estrellas'">
+  @for (estrella of estrellas(); track estrella) {
+    <i
+      class="bi"
+      [class.bi-star-fill]="estrella <= puntaje()"
+      [class.bi-star]="estrella > puntaje()"
+    ></i>
+  }
+</span>

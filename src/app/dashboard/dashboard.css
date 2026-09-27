@@ -1,0 +1,9 @@
+.dashboard {
+  background: var(--fondo-degradado);
+  padding: 60px 0 80px;
+}
+
+.saludo {
+  color: var(--color-titulo);
+  font-weight: 600;
+}

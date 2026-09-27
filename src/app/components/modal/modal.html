@@ -1,0 +1,19 @@
+@if (abierto()) {
+  <div class="fondo" (click)="cerrar.emit()"></div>
+
+  <div
+    class="dialogo"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-label]="titulo()"
+    [style.max-width.px]="ancho()"
+  >
+    <button
+      type="button"
+      class="btn-close cerrar"
+      aria-label="Cerrar"
+      (click)="cerrar.emit()"
+    ></button>
+    <ng-content />
+  </div>
+}

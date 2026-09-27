@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { EncabezadoSeccion } from '../components/encabezado-seccion/encabezado-seccion';
+import { Tarjeta } from '../components/tarjeta/tarjeta';
 
 @Component({
   selector: 'app-casos',
-  imports: [],
+  imports: [EncabezadoSeccion, Tarjeta],
   templateUrl: './casos.html',
   styleUrl: './casos.css',
 })

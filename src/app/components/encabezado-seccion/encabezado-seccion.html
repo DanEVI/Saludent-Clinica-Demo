@@ -1,0 +1,11 @@
+<div class="text-center mb-5">
+  <span class="etiqueta"><i class="bi {{ icono() }} me-1"></i> {{ etiqueta() }}</span>
+  @if (nivel() === 1) {
+    <h1 class="titulo mt-3">{{ titulo() }}</h1>
+  } @else {
+    <h2 class="titulo mt-3">{{ titulo() }}</h2>
+  }
+  @if (descripcion()) {
+    <p class="descripcion mx-auto">{{ descripcion() }}</p>
+  }
+</div>

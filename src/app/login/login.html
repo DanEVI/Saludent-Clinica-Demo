@@ -1,0 +1,66 @@
+<section class="login">
+  <div class="container">
+    <app-tarjeta class="caja mx-auto">
+      <div class="text-center mb-4">
+        <span class="icono mb-3"><i class="bi bi-speedometer2"></i></span>
+        <h1 class="titulo">Ingresar al dashboard</h1>
+        <p class="subtitulo mb-0">Acceso solo para el personal de Saludent.</p>
+      </div>
+
+      @if (error()) {
+        <div class="alert alert-danger py-2" role="alert">
+          <i class="bi bi-exclamation-circle me-1"></i> {{ error() }}
+        </div>
+      }
+
+      <form [formGroup]="form" (ngSubmit)="ingresar()" novalidate>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            id="email"
+            type="email"
+            class="form-control"
+            formControlName="email"
+            autocomplete="username"
+            [class.is-invalid]="invalido('email')"
+          />
+          <app-mensaje-error [errores]="errores('email')" [mensajes]="mensajes.email" />
+        </div>
+
+        <div class="mb-4">
+          <label for="password" class="form-label">Contraseña</label>
+          <div class="input-group">
+            <input
+              id="password"
+              class="form-control"
+              formControlName="password"
+              autocomplete="current-password"
+              [type]="verPassword() ? 'text' : 'password'"
+              [class.is-invalid]="invalido('password')"
+            />
+            <button
+              type="button"
+              class="btn btn-ver"
+              [attr.aria-label]="verPassword() ? 'Ocultar contraseña' : 'Mostrar contraseña'"
+              (click)="verPassword.set(!verPassword())"
+            >
+              <i
+                class="bi"
+                [class.bi-eye]="!verPassword()"
+                [class.bi-eye-slash]="verPassword()"
+              ></i>
+            </button>
+          </div>
+          <app-mensaje-error [errores]="errores('password')" [mensajes]="mensajes.password" />
+        </div>
+
+        <button type="submit" class="btn btn-primario w-100" [disabled]="cargando()">
+          @if (cargando()) {
+            <span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>
+          }
+          Ingresar
+        </button>
+      </form>
+    </app-tarjeta>
+  </div>
+</section>

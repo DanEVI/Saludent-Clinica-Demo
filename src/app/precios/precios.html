@@ -1,15 +1,12 @@
 <section class="precios">
   <div class="container">
-    <div class="text-center mb-5">
-      <span class="etiqueta">
-        <i class="bi bi-cash-coin me-1"></i> Precios transparentes
-      </span>
-      <h1 class="titulo mt-3">Sin sorpresas al momento de pagar</h1>
-      <p class="descripcion mx-auto">
-        Estos son los precios vigentes de nuestros tratamientos. Si tu caso necesita más sesiones,
-        te lo decimos en la primera consulta.
-      </p>
-    </div>
+    <app-encabezado-seccion
+      [nivel]="1"
+      icono="bi-cash-coin"
+      etiqueta="Precios transparentes"
+      titulo="Sin sorpresas al momento de pagar"
+      descripcion="Estos son los precios vigentes de nuestros tratamientos. Si tu caso necesita más sesiones, te lo decimos en la primera consulta."
+    />
 
     <div class="table-responsive tabla-contenedor">
       <table class="table align-middle mb-0">
@@ -43,7 +40,9 @@
               </td>
               <td class="text-end fw-bold">S/ {{ tratamiento.precioHoy }}</td>
               <td class="text-end">
-                <a class="btn btn-agendar rounded-pill" routerLink="/agendar">Agendar</a>
+                <app-boton-agendar variante="contorno" [servicio]="tratamiento.nombre">
+                  Agendar
+                </app-boton-agendar>
               </td>
             </tr>
           }
